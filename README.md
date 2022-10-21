@@ -1,6 +1,6 @@
 
 ## Problem statement
-Why choose between messy input (`println!`) and messy output (`dbg!`)? `printc!` allows you to debug code with clean input and clean output.
+Why choose between messy input (`println!`) and messy output (`dbg!`)? `printc!` allows you to debug code with clean input and clean output. Simultaneously.
 
 ## Motivation, use-cases
 ### Short motivation: 
