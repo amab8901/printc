@@ -284,7 +284,3 @@ test2 = Test {
     _marker: PhantomPinned,
 }
 ```
-
-## Links and related work
-[This](https://users.rust-lang.org/t/how-to-print-entire-namespace-in-one-statement/83047) issue is what triggered me into writing this API Change Proposal. I'm probably not the only one who would benefit from this proposed macro.
-
