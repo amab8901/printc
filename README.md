@@ -14,7 +14,7 @@ If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/)
 * [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html)
 * [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html)
 
-`print!` and `eprint!` are rarely used because the user can instead choose `println!` and `eprintln!` to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases where `print!` and `eprint!` would be preferable). Thus, `print!` and `eprint!` are suboptimal choices for producing clean & clear output with minimal boilerplate. 
+`print!` and `eprint!` are rarely used because the user can instead choose `println!` and `eprintln!` to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases where `print!` and `eprint!` would be preferable). Thus, `print!` and `eprint!` are suboptimal choices for producing clean output with minimal boilerplate. 
 
 `println!` and `eprintln!` produce clean and clear output, but they require the user to write long boilerplate.
 
