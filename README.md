@@ -204,19 +204,19 @@ Clean input:
 ```
 fn main() {
    let mut test1 = Test::new("test1");
-   pdbg!(&test1);
+   printc!(test1);
    
    let mut test1_pin = unsafe { Pin::new_unchecked(&mut test1) };
    Test::init(test1_pin.as_mut());
    
    drop(test1_pin);
-   pdbg!(&test1);
+   printc!(test1);
 
    let mut test2 = Test::new("test2");
-   pdbg!(&test1, &test2);
+   printc!(test1, test2);
    
    mem::swap(&mut test1, &mut test2);
-   pdbg!(&test1, &test2);
+   printc!(test1, test2);
 }
 ```
 
