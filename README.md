@@ -198,7 +198,7 @@ Messy output:
 ```
 
 ## Solution: `printc!`
-If you use my solution, the input and output should both be clean, as follows:
+If you use `printc!`, the input and output should both be clean, as follows:
 
 Clean input:
 ```
