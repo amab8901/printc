@@ -8,7 +8,7 @@ If you want to debug, you're normally forced to choose between writing long boil
 
 ### Long motivation:
 If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/) offers the following options:
-* `dbg!`
+* [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html)
 * `println!`
 * `print!`
 * `eprint!`
