@@ -197,7 +197,7 @@ Messy output:
 }
 ```
 
-## Solution: printc
+## Solution: `printc!`
 If you use my solution, the input and output should both be clean, as follows:
 
 Clean input:
