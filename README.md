@@ -76,7 +76,7 @@ impl Test {
     }
 }
 ```
-I tried to play around with this code for educational purposes, using two different approaches: `println!` and `dbg!`. In both cases, I modified only the `main` function as follows:
+In an attempt to understand the code, you may try to play around with it for educational purposes, using two different approaches: `println!` and `dbg!`. In both cases, I modified only the `main` function as follows:
 
 ### `println!` approach
 Messy input:
