@@ -18,7 +18,7 @@ If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/)
 
 `println!` and `eprintln!` produce clean output, but they require you to write long boilerplate.
 
-`dbg!` can be used very concisely and easily, with minimal boilerplate. But the output is messy and takes more effort to visually navigate. 
+`dbg!` takes clean input, but the output is messy and takes more effort to visually navigate. 
 
 Beginners and intermediate-level users (such as myself) may want to copy code examples from documentation and forums (like github) and paste them into their local environment (or [Rust Playground](https://play.rust-lang.org/)) to play around with it, to better understand what the code actually does. Using `println!` and `eprintln!` is cumbersome and messy to write, while `cfg!` is cumbersome and messy to read its output. 
 
