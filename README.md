@@ -76,7 +76,7 @@ impl Test {
     }
 }
 ```
-In an attempt to understand the code, you may try to play around with it for educational purposes. As discussed previously, `println!` and `dbg!` are the best options offered by the Standard Library. Let's see how it works out for each of them:
+In an attempt to understand the code, you may try to play around with it for educational purposes. As discussed previously, [`println!`](https://doc.rust-lang.org/std/macro.println.html) and [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) are the best options offered by the Standard Library. Let's see how it works out for each of them:
 
 ### `println!` approach
 Messy input:
