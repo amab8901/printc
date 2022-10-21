@@ -197,33 +197,7 @@ Messy output:
 }
 ```
 
-## Solution sketches
-Create new macro by adding the following code (or some variation thereof) into `library/std/src/macros.rs`:
-```
-#[macro_export]
-#[cfg_attr(not(test), rustc_diagnostic_item = "dbg_macro")]
-#[unstable(feature = "dbg_macro")]
-macro_rules! pdbg {
-    () => {
-        $crate::eprintln!()
-    };
-    ($val:expr $(,)?) => {
-        // Use of `match` here is intentional because it affects the lifetimes
-        // of temporaries - https://stackoverflow.com/a/48732525/1063961
-        match $val {
-            tmp => {
-                $crate::eprintln!("{} = {:#?}\n",
-                    $crate::stringify!($val), &tmp);
-                tmp
-            }
-        }
-    };
-    ($($val:expr),+ $(,)?) => {
-        ($($crate::pdbg!($val)),+,)
-    };
-}
-
-```
+## Solution: printc
 If you use my solution, the input and output should both be clean, as follows:
 
 Clean input:
