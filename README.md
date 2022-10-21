@@ -3,10 +3,10 @@
 Why should the user have to choose between messy input and messy output? My proposed macro will enable the user to debug their code with clean input and clean output.
 
 ## Motivation, use-cases
-###Short motivation: 
+### Short motivation: 
 If you want to debug, you're currently forced to choose between writing long boilerplate and having messy output that requires more effort to visually navigate. It's important to be able to produce clean and clear output without having to write long boilerplate, especially for beginners and intermediate-level users (I can't speak for advanced users though, since I haven't reached that level myself).  
 
-###Long motivation:
+### Long motivation:
 If we want to debug code, we have the following options available:
 * `dbg!`
 * `println!`
