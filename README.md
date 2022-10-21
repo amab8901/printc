@@ -16,9 +16,9 @@ If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/)
 
 [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) are rarely used because the user can instead choose [`println!`](https://doc.rust-lang.org/std/macro.println.html) and [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html) to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases where [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) would be preferable). Thus, [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) are suboptimal choices for producing clean output with minimal boilerplate. 
 
-`println!` and `eprintln!` produce clean output, but they require you to write long boilerplate in the input.
+[`println!`](https://doc.rust-lang.org/std/macro.println.html) and [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html) produce clean output, but they require you to write long boilerplate in the input.
 
-`dbg!` takes clean input, but the output is messy and takes more effort to visually navigate. 
+[`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) takes clean input, but the output is messy and takes more effort to visually navigate. 
 
 Beginners and intermediate-level users (such as myself) may want to copy code examples from documentation and forums (like github) and paste them into their local environment (or [Rust Playground](https://play.rust-lang.org/)) to play around with it, to better understand what the code actually does. Using `println!` and `eprintln!` is cumbersome and messy to write, while `cfg!` is cumbersome and messy to read its output. 
 
