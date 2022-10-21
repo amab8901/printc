@@ -200,7 +200,7 @@ Messy output:
 ```
 
 ## Solution: `printc!`
-If you use `printc!`, the input and output should both be clean, as follows:
+`printc!` lets you do the same thing, but with clean input and clean output. Simultaneously.
 
 Clean input:
 ```
