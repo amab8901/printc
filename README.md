@@ -1,6 +1,6 @@
 
 ## Problem statement
-Why choose between messy input (`println!`) and messy output (`dbg!`)? `printc!` allows you to debug code with clean input and clean output. Simultaneously.
+Why choose between messy input ([`println!`](https://doc.rust-lang.org/std/macro.println.html)) and messy output ([`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html))? `printc!` allows you to debug code with clean input and clean output. Simultaneously.
 
 ## Motivation, use-cases
 ### Short motivation: 
