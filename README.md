@@ -1,6 +1,6 @@
 
 ## Problem statement
-Why should the user have to choose between messy input and messy output? My proposed macro will enable the user to debug their code with clean input and clean output.
+Why choose between messy input and messy output? My proposed macro will enable the user to debug their code with clean input and clean output.
 
 ## Motivation, use-cases
 ### Short motivation: 
