@@ -4,7 +4,7 @@ Why choose between messy input ([`println!`](https://doc.rust-lang.org/std/macro
 
 ## Motivation, use-cases
 ### Short motivation: 
-If you want to debug, you're normally forced to choose between writing long boilerplate (`println!`) and having messy output that requires more effort to visually navigate (`dbg!`). The ability to produce clean output from clean input allows you to analyze your code more easily and learn faster.
+If you want to debug, you're normally forced to choose between writing long boilerplate ([`println!`](https://doc.rust-lang.org/std/macro.println.html)) and having messy output that requires more effort to visually navigate ([`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html)). The ability to produce clean output from clean input allows you to analyze your code more easily and learn faster.
 
 ### Long motivation:
 If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/) offers the following options:
