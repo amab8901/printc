@@ -4,7 +4,7 @@ Why choose between messy input (`println!`) and messy output (`dbg!`)? `printc!`
 
 ## Motivation, use-cases
 ### Short motivation: 
-If you want to debug, you're normally forced to choose between writing long boilerplate (`println!`) and having messy output that requires more effort to visually navigate (`dbg!`). It's important to be able to produce clean and clear output without having to write long boilerplate.  
+If you want to debug, you're normally forced to choose between writing long boilerplate (`println!`) and having messy output that requires more effort to visually navigate (`dbg!`). Being able to produce clean output from clean input allows you to analyze your code more easily and learn faster.
 
 ### Long motivation:
 If we want to debug code, we have the following options available:
