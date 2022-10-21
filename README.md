@@ -199,7 +199,7 @@ Messy output:
 }
 ```
 
-## Solution: `printc!`
+## Solution: `printc!` approach
 `printc!` lets you do the same thing, but with clean input and clean output. Simultaneously.
 
 Clean input:
