@@ -10,9 +10,9 @@ If you want to debug, you're normally forced to choose between writing long boil
 If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/) offers the following options:
 * [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html)
 * [`println!`](https://doc.rust-lang.org/std/macro.println.html)
-* `print!`
-* `eprint!`
-* `eprintln!`
+* [`print!`](https://doc.rust-lang.org/std/macro.print.html)
+* [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html)
+* [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html)
 
 As I understand it, `print!` and `eprint!` are rarely used because the user can instead choose `println!` and `eprintln!` to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases of `print!` and `eprint!`). Thus, `print!` and `eprint!` are suboptimal choices for producing clean & clear output with minimal boilerplate. 
 
