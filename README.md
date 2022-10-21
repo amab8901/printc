@@ -145,7 +145,7 @@ test2 = Test {
 }
 ```
 
-### `dbg!` approach
+### [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) approach
 Clean input:
 ```
 fn main() {
