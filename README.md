@@ -5,6 +5,16 @@ Add the following to your `Cargo.toml`:
 printc = "0.1"
 ```
 
+## Example
+```
+#[macro_use] extern crate printc;
+
+fn main() {
+    let x = 500;
+    printc!(x);
+}
+```
+
 ## Problem statement
 Why choose between messy input ([`println!`][println]) and messy output ([`dbg!`][dbg])? `printc!` allows you to debug code with clean input and clean output. Simultaneously.
 
