@@ -14,9 +14,9 @@ If we want to debug code, [the Standard Library][standard-library] offers the fo
 * [`eprint!`][eprint]
 * [`eprintln!`][eprintln]
 
-[`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) are rarely used because the user can instead choose [`println!`][println] and [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html) to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases where [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) would be preferable). Thus, [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) are suboptimal choices for producing clean output with minimal boilerplate. 
+[`print!`][print] and [`eprint!`][eprint] are rarely used because the user can instead choose [`println!`][println] and [`eprintln!`][eprintln] to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases where [`print!`][print] and [`eprint!`][eprint] would be preferable). Thus, [`print!`][print] and [`eprint!`][eprint] are suboptimal choices for producing clean output with minimal boilerplate. 
 
-[`println!`][println] and [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html) produce clean output, but they require you to write long boilerplate in the input.
+[`println!`][println] and [`eprintln!`][eprintln] produce clean output, but they require you to write long boilerplate in the input.
 
 [`dbg!`][dbg] takes clean input, but the output is messy and takes more effort to visually navigate. 
 
