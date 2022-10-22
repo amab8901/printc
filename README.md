@@ -10,9 +10,9 @@ If you want to debug, you're normally forced to choose between writing long boil
 If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/) offers the following options:
 * [`dbg!`][dbg]
 * [`println!`][println]
-* [`print!`](https://doc.rust-lang.org/std/macro.print.html)
-* [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html)
-* [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html)
+* [`print!`][print]
+* [`eprint!`][eprint]
+* [`eprintln!`][eprintln]
 
 [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) are rarely used because the user can instead choose [`println!`][println] and [`eprintln!`](https://doc.rust-lang.org/std/macro.eprintln.html) to get the same thing but with clearer structure to more easily distinguish different outputs from each other (although there may be some use cases where [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) would be preferable). Thus, [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`eprint!`](https://doc.rust-lang.org/std/macro.eprint.html) are suboptimal choices for producing clean output with minimal boilerplate. 
 
@@ -262,4 +262,7 @@ test2 = Test {
 ```
 
 [dbg]: https://doc.rust-lang.org/std/macro.dbg.html
+[eprint]: https://doc.rust-lang.org/std/macro.eprint.html
+[eprintln]: https://doc.rust-lang.org/std/macro.eprintln.html
+[print]: https://doc.rust-lang.org/std/macro.print.html
 [println]: https://doc.rust-lang.org/std/macro.println.html
