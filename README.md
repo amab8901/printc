@@ -14,6 +14,10 @@ fn main() {
     printc!(x);
 }
 ```
+Output:
+```
+x = 500
+```
 
 ## Problem statement
 Why choose between messy input ([`println!`][println]) and messy output ([`dbg!`][dbg])? `printc!` allows you to debug code with clean input and clean output. Simultaneously.
