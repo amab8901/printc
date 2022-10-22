@@ -20,9 +20,9 @@ If we want to debug code, [the Standard Library][standard-library] offers the fo
 
 [`dbg!`][dbg] takes clean input, but the output is messy and takes more effort to visually navigate. 
 
-For instance, you may want to copy code examples from documentation and forums (like [github](https://github.com/)) and paste them into your local environment (or [Rust Playground](https://play.rust-lang.org/)) to play around with it, to better understand what the code actually does. We will demonstrate how the messy input of [`println!`][println] and messy output of [`dbg!`][dbg] looks like, and compare it with `printc!`.
+For instance, you may want to copy code examples from documentation and forums (like [github][github]) and paste them into your local environment (or [Rust Playground][playground]) to play around with it, to better understand what the code actually does. We will demonstrate how the messy input of [`println!`][println] and messy output of [`dbg!`][dbg] looks like, and compare it with `printc!`.
 
-Let's suppose that you are unfamiliar with [Pinning](https://rust-lang.github.io/async-book/04_pinning/01_chapter.html) and you read [a documentation page](https://rust-lang.github.io/async-book/04_pinning/01_chapter.html) about it, and you encounter the [code example][code-example-1] below:
+Let's suppose that you are unfamiliar with [Pinning][pinning] and you read [a documentation page][pinning] about it, and you encounter the [code example][code-example-1] below:
 ```
 fn main() {
    let mut test1 = Test::new("test1");
@@ -76,7 +76,7 @@ impl Test {
     }
 }
 ```
-In an attempt to understand the code, you may try to play around with it for educational purposes. As discussed previously, [`println!`][println] and [`dbg!`](https://doc.rust-lang.org/std/macro.dbg.html) are the best options offered by [the Standard Library](https://doc.rust-lang.org/std/). Let's modify the `main()` function and see how it works out for each of the two approaches:
+In an attempt to understand the code, you may try to play around with it for educational purposes. As discussed previously, [`println!`][println] and [`dbg!`][dbg] are the best options offered by [the Standard Library][standard-library]. Let's modify the `main()` function and see how it works out for each of the two approaches:
 
 ### [`println!`][println] [approach](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20let%20mut%20test1%20%3D%20Test%3A%3Anew(%22test1%22)%3B%0A%20%20%20println!(%22test1%20%3D%20%7B%3A%23%3F%7D%22%2C%20test1)%3B%0A%20%20%20println!()%3B%0A%20%20%20%0A%20%20%20let%20mut%20test1_pin%20%3D%20unsafe%20%7B%20Pin%3A%3Anew_unchecked(%26mut%20test1)%20%7D%3B%0A%20%20%20Test%3A%3Ainit(test1_pin.as_mut())%3B%0A%20%20%20%0A%20%20%20drop(test1_pin)%3B%0A%20%20%20println!(%22test1%20%3D%20%7B%3A%23%3F%7D%22%2C%20test1)%3B%0A%20%20%20println!()%3B%0A%0A%20%20%20let%20mut%20test2%20%3D%20Test%3A%3Anew(%22test2%22)%3B%0A%20%20%20println!(%22test1%20%3D%20%7B%3A%23%3F%7D%22%2C%20test1)%3B%0A%20%20%20println!()%3B%0A%20%20%20println!(%22test2%20%3D%20%7B%3A%23%3F%7D%22%2C%20test2)%3B%0A%20%20%20println!()%3B%0A%20%20%20%0A%20%20%20mem%3A%3Aswap(%26mut%20test1%2C%20%26mut%20test2)%3B%0A%20%20%20println!(%22test1%20%3D%20%7B%3A%23%3F%7D%22%2C%20test1)%3B%0A%20%20%20println!()%3B%0A%20%20%20println!(%22test2%20%3D%20%7B%3A%23%3F%7D%22%2C%20test2)%3B%0A%20%20%20println!()%3B%0A%7D%0A%0A%0A%0A%0A%0Ause%20std%3A%3Apin%3A%3APin%3B%0Ause%20std%3A%3Amarker%3A%3APhantomPinned%3B%0Ause%20std%3A%3Amem%3B%0A%0A%23%5Bderive(Debug)%5D%0Astruct%20Test%20%7B%0A%20%20%20%20a%3A%20String%2C%0A%20%20%20%20b%3A%20*const%20String%2C%0A%20%20%20%20_marker%3A%20PhantomPinned%2C%0A%7D%0A%0A%0Aimpl%20Test%20%7B%0A%20%20%20%20fn%20new(txt%3A%20%26str)%20-%3E%20Self%20%7B%0A%20%20%20%20%20%20%20%20Test%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20String%3A%3Afrom(txt)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20std%3A%3Aptr%3A%3Anull()%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20This%20makes%20our%20type%20%60!Unpin%60%0A%20%20%20%20%20%20%20%20%20%20%20%20_marker%3A%20PhantomPinned%2C%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fn%20init%3C%27a%3E(self%3A%20Pin%3C%26%27a%20mut%20Self%3E)%20%7B%0A%20%20%20%20%20%20%20%20let%20self_ptr%3A%20*const%20String%20%3D%20%26self.a%3B%0A%20%20%20%20%20%20%20%20let%20this%20%3D%20unsafe%20%7B%20self.get_unchecked_mut()%20%7D%3B%0A%20%20%20%20%20%20%20%20this.b%20%3D%20self_ptr%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%23%5Ballow(unused)%5D%0A%20%20%20%20fn%20a%3C%27a%3E(self%3A%20Pin%3C%26%27a%20Self%3E)%20-%3E%20%26%27a%20str%20%7B%0A%20%20%20%20%20%20%20%20%26self.get_ref().a%0A%20%20%20%20%7D%0A%0A%20%20%20%20%23%5Ballow(unused)%5D%0A%20%20%20%20fn%20b%3C%27a%3E(self%3A%20Pin%3C%26%27a%20Self%3E)%20-%3E%20%26%27a%20String%20%7B%0A%20%20%20%20%20%20%20%20assert!(!self.b.is_null()%2C%20%22Test%3A%3Ab%20called%20without%20Test%3A%3Ainit%20being%20called%20first%22)%3B%0A%20%20%20%20%20%20%20%20unsafe%20%7B%20%26*(self.b)%20%7D%0A%20%20%20%20%7D%0A%7D)
 Messy input:
@@ -265,6 +265,9 @@ test2 = Test {
 [dbg]: https://doc.rust-lang.org/std/macro.dbg.html
 [eprint]: https://doc.rust-lang.org/std/macro.eprint.html
 [eprintln]: https://doc.rust-lang.org/std/macro.eprintln.html
+[github]: https://github.com/
+[pinning]: https://rust-lang.github.io/async-book/04_pinning/01_chapter.html
+[playground]: https://play.rust-lang.org/
 [print]: https://doc.rust-lang.org/std/macro.print.html
 [println]: https://doc.rust-lang.org/std/macro.println.html
 [standard-library]: https://doc.rust-lang.org/std/
