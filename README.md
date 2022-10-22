@@ -7,7 +7,7 @@ Why choose between messy input ([`println!`][println]) and messy output ([`dbg!`
 If you want to debug, you're normally forced to choose between writing long boilerplate ([`println!`][println]) and having messy output that requires more effort to visually navigate ([`dbg!`][dbg]). The ability to produce clean output from clean input allows you to analyze your code more easily and learn faster.
 
 ### Long motivation:
-If we want to debug code, [the Standard Library](https://doc.rust-lang.org/std/) offers the following options:
+If we want to debug code, [the Standard Library][standard-library] offers the following options:
 * [`dbg!`][dbg]
 * [`println!`][println]
 * [`print!`][print]
@@ -266,3 +266,4 @@ test2 = Test {
 [eprintln]: https://doc.rust-lang.org/std/macro.eprintln.html
 [print]: https://doc.rust-lang.org/std/macro.print.html
 [println]: https://doc.rust-lang.org/std/macro.println.html
+[standard-library]: https://doc.rust-lang.org/std/
